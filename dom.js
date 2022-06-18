@@ -22,17 +22,16 @@ para2.textContent = "ME TOO!";
 
 
 // placing elements in DOM in correct place
-document.body.appendChild(div);
 document.body.appendChild(para);
 document.body.appendChild(blueH3);
-
+document.body.appendChild(div);
 
 // stylizing elements via JS 
 
 para.setAttribute('style', 'color: red;');
 blueH3.setAttribute('style', 'color: blue;');
 div.setAttribute('id', 'container'); 
-
+div.setAttribute('style', 'background-color: pink; border-style: solid; border-color: black');
 
 // put h1 and para2 in container
 
