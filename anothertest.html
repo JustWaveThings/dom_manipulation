@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+
+    <button id="btn3">event listener</button>
+    
+</body>
+</html>
+<script>
+    // // Method 2
+
+    // // const btn = document.querySelector("#btn");
+    // // btn.onclick = () => alert("Hello World");
+
+    // // Method 3
+
+    // // const btn2 = document.querySelector("#btn2");
+    // // btn2.addEventListener("click", () => {
+    // //   alert("Hello World");
+    // // });
+
+    // // with a named function 
+
+    // function alertFunction() {
+    //     alert("Yay, you did it.");
+    // }
+
+    // // method #2
+
+    // btn2.onclick = alertFunction;
+
+    // // method #3
+
+    // btn.addEventListener('click', alertFunction);
+
+    // //
+
+    // btn.addEventListener("click", function (e) {
+    //   console.log(e);
+    // });
+
+    // btn.addEventListener("click", function (e) {
+    //   console.log(e.target);
+    // });
+
+    // btn.addEventListener("click", function (e) {
+    //   e.target.style.background = 'blue';
+    // });
+
+    // buttons is a node list. It looks and acts much like an array.
+    //const buttons = document.querySelectorAll('button');
+
+    // // we use the .forEach method to iterate through each button
+    // buttons.forEach((button) => {
+
+    // //   // and for each one we add a 'click' listener
+    //   button.addEventListener('click', () => {
+    //     console.log(button.id);
+    //   });
+    // });
+
+    // creates input field on page 
+    const input = document.createElement("input");
+    input.setAttribute("type", "text");
+    document.body.appendChild(input);
+
+    // creates event listener for input into textbox
+    input.addEventListener("keydown", logKey);
+
+    // logs 1 press to console, then removes listener -- works
+    function logKey(event) {
+        console.log(`You pressed "${event.key}".`);
+        input.removeEventListener("keydown", logKey);
+    }
+
+    // this is a test to figure out how to remove an event listener based on a conditional.
+
+    // assign btn3 to a const... 
+    const btn3 = document.querySelector('#btn3');
+    // assign a  for use in function
+    let game = 0;
+
+   /// VVVVVVV this works !!! 
+ 
+    btn3.addEventListener('click', foo);
+
+    function foo(event = game) {
+        console.log('You pressed btn3');
+        game++;
+        console.log(game);
+        if (game === 5) {
+            btn3.removeEventListener('click', foo);
+        }
+    }
+// uri encoding / decoding 
+
+    // const uri = "https://www.theodinproject.com/lessons/foundations-fundamentals-part-3";
+    // const encoded = encodeURI(uri);
+    // console.log(encoded);
+    // // expected output: "https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B"
+
+    // try {
+    //     console.log(decodeURI(encoded));
+    //     // expected output: "https://mozilla.org/?x=шеллы"
+    // } catch (e) { // catches a malformed URI
+    //     console.error(e);
+    // }
+
+
+// different ways of calling map function    
+
+    const array1 = [1, 4, 9, 16];
+
+    // pass a function to map
+    const map1 = array1.map(x => x * 2);
+
+    console.log(map1);
+
+    // expected output: Array [2, 8, 18, 32]
+
+    // arrow functions 
+
+    const quadrupled = array1.map(item => item * 4);
+    console.log(quadrupled);
+
+    const list = ['h', 'e', 'l', 'l', 'o'];
+    list.map((currElement, index) => {
+        console.log(`The current iteration is: ${index} 
+The current element is: ${currElement}`)
+        return currElement; //equivalent to list[index]
+    });
+    // console.log(list.map());
+
+
+// 
+    for (let i = 0; i < 2; i++) {
+    const button = document.createElement("button");
+    button.innerText = 'Button ' + i;
+    button.onclick = function () {
+        console.log(i);
+    };
+    document.body.appendChild(button);
+}
+    //console.log(i); // Uncaught ReferenceError: i is not defined.
+
+
+    function myFunc(theArr) {
+        theArr[0] = 30;
+    }
+    const arr2 = new Array(15);
+    const arr = [45];
+
+    console.log(arr2);
+    console.log(Array.isArray((arr))); // 45
+    myFunc(arr);
+    console.log(typeof (arr[0])); // 30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
