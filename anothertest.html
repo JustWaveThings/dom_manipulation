@@ -119,69 +119,113 @@
     // }
 
 
-// different ways of calling map function    
+// // different ways of calling map function    
 
-    const array1 = [1, 4, 9, 16];
+    // const array1 = [1, 4, 9, 16];
 
-    // pass a function to map
-    const map1 = array1.map(x => x * 2);
+//     // pass a function to map
+//     const map1 = array1.map(x => x * 2);
 
-    console.log(map1);
+//     console.log(map1);
 
     // expected output: Array [2, 8, 18, 32]
 
     // arrow functions 
 
-    const quadrupled = array1.map(item => item * 4);
-    console.log(quadrupled);
+    // const quadrupled = array1.map(item => item * 4);
+//     console.log(quadrupled);
 
-    const list = ['h', 'e', 'l', 'l', 'o'];
-    list.map((currElement, index) => {
-        console.log(`The current iteration is: ${index} 
-The current element is: ${currElement}`)
-        return currElement; //equivalent to list[index]
-    });
-    // console.log(list.map());
+//     const list = ['h', 'e', 'l', 'l', 'o'];
+//     list.map((currElement, index) => {
+//         console.log(`The current iteration is: ${index} 
+// The current element is: ${currElement}`)
+//         return currElement; //equivalent to list[index]
+//     });
+//     // console.log(list.map());
 
 
-// 
-    for (let i = 0; i < 2; i++) {
-    const button = document.createElement("button");
-    button.innerText = 'Button ' + i;
-    button.onclick = function () {
-        console.log(i);
-    };
-    document.body.appendChild(button);
-}
+// // 
+//     for (let i = 0; i < 2; i++) {
+//     const button = document.createElement("button");
+//     button.innerText = 'Button ' + i;
+//     button.onclick = function () {
+//         console.log(i);
+//     };
+//     document.body.appendChild(button);
+// }
     //console.log(i); // Uncaught ReferenceError: i is not defined.
 
 
-    function myFunc(theArr) {
-        theArr[0] = 30;
+    // function myFunc(theArr) {
+    //     theArr[0] = 30;
+    // }
+    // const arr2 = new Array(15);
+    // const arr = [45];
+
+    // console.log(arr2);
+    // console.log(Array.isArray((arr))); // 45
+    // myFunc(arr);
+    // console.log(typeof (arr[0])); // 30
+
+    const x = 1;
+
+    function a() {
+        const y = 2;
+        output (y);
     }
-    const arr2 = new Array(15);
-    const arr = [45];
 
-    console.log(arr2);
-    console.log(Array.isArray((arr))); // 45
-    myFunc(arr);
-    console.log(typeof (arr[0])); // 30
+    function b() {
+        const z = 3;
+        output(z);
+    }
+
+    function output(value) {
+        const div = document.createElement('div');
+        document.body.appendChild(div);
+        div.textContent = `Value: ${value}`;
+    }
+
+    output(x);
+    a();
+    b();
+
+    function go() {
+        return ':P';
+    }
+
+    function f(a = go()) { // Throws a `ReferenceError` when `f` is invoked.
+        return a;
+    }
+    console.log(f());   
+
+    function preFilledArray([x = 1, y = 2] = []) {
+        return x + y;
+    }
+
+    console.log(preFilledArray());       // 3
+    preFilledArray([]);     // 3
+    preFilledArray([2]);    // 4
+    preFilledArray([2, 3]); // 5
+
+    function double(num = 80){
+        return num * num;
+    }
+
+    // function map4(f, a) {
+    //     let result = []; // Create a new Array
+    //     let i; // Declare variable
+    //     for (i = 0; i != a.length; i++)
+    //         result[i] = f(a[i]);
+    //     return result;
+    // } 
+    // map4(double(), [1, 2, 3]);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    let p = 1;
+    function myFunc(q = p + 1) {
+        return q;
+    }
+    console.log(myFunc());
 
 
 
