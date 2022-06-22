@@ -38,11 +38,8 @@
         }
     }
     function returnArrayItem(array = names) {
-        return array[random((array.length) - 1)];
-        
+        return array[random((array.length) - 1)];   
     }
-    console.log(returnArrayItem(names));
-
     para.textContent = returnArrayItem();
 
     const section = document.querySelector('section');
