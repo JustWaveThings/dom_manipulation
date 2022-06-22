@@ -43,15 +43,13 @@
     const height = 75;
     const color = 'blue';
 
-    drawColorRectangle (x = x, y = y, width = width, height = height, color = color) {
+    drawColorRectangle(x = 1, y = 1, width = 50, height = 50, color = 'red') {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = color;
             ctx.fillRect(x, y, width, height);
         }
 
-    drawColorRectangle();
-
-   
+    drawColorRectangle(x, y, width, height, color);
 
     const section = document.querySelector('section');
 
